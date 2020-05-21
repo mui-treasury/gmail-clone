@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Layout, {
   Root,
-  getDrawerSidebar,
   getContent,
+  getDrawerSidebar,
 } from "@mui-treasury/layout";
 import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
 import AppHeader from "./components/AppHeader";
+import AppSidebar from "./components/AppSidebar";
 import AppFooter from "./components/AppFooter";
 import CustomTrigger from "./components/CustomTrigger";
 
@@ -38,8 +39,8 @@ scheme.configureEdgeSidebar((builder) => {
     });
 });
 
-const DrawerSidebar = getDrawerSidebar(styled);
 const Content = getContent(styled);
+const DrawerSidebar = getDrawerSidebar(styled);
 
 const theme = createMuiTheme({
   palette: {
@@ -59,7 +60,9 @@ function App() {
       >
         <CssBaseline />
         <AppHeader />
-        <DrawerSidebar sidebarId={"primarySidebar"}>Sidebar</DrawerSidebar>
+        <DrawerSidebar sidebarId={"primarySidebar"}>
+          <AppSidebar />
+        </DrawerSidebar>
         <Content>content</Content>
         <DrawerSidebar sidebarId={"secondarySidebar"}>Sidebar</DrawerSidebar>
         <CustomTrigger />
