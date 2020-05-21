@@ -9,6 +9,7 @@ import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
 import AppHeader from "./components/AppHeader";
 import AppSidebar from "./components/AppSidebar";
 import AppFooter from "./components/AppFooter";
+import AppSubSidebar from './components/AppSubSidebar';
 import CustomTrigger from "./components/CustomTrigger";
 
 const scheme = Layout();
@@ -64,7 +65,9 @@ function App() {
           <AppSidebar />
         </DrawerSidebar>
         <Content>content</Content>
-        <DrawerSidebar sidebarId={"secondarySidebar"}>Sidebar</DrawerSidebar>
+        <DrawerSidebar sidebarId={"secondarySidebar"}>
+          <AppSubSidebar />
+        </DrawerSidebar>
         <CustomTrigger />
         <AppFooter />
       </Root>
