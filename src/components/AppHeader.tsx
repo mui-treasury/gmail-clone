@@ -22,9 +22,6 @@ const Header = getHeader(styled);
 const CollapseIcon = getCollapseIcon(styled);
 
 const useStyles = makeStyles({
-  root: {
-    minWidth: 768,
-  },
   collapse: {
     marginLeft: -12,
     marginRight: 4,
@@ -33,7 +30,8 @@ const useStyles = makeStyles({
     height: 40,
   },
   toolbar: {
-    minHeight: '64px !important',
+    minWidth: 768,
+    minHeight: "64px !important",
     backgroundColor: "#fff",
     boxShadow: "inset 0 -1px 0 rgba(100,121,143,0.122)",
   },
@@ -58,7 +56,7 @@ const AppHeader = () => {
   const googleStyles = useGoogleAvatarStyles({ avatarSize: 32, ringSize: 40 });
   const avatarStyles = useSizedIconButtonStyles({ padding: 4, childSize: 32 });
   return (
-    <Header className={styles.root}>
+    <Header>
       <Toolbar className={styles.toolbar}>
         <Box width={238} display={"flex"} alignItems="center">
           <CollapseIcon
@@ -87,7 +85,7 @@ const AppHeader = () => {
             </IconButton>
           }
         />
-        <Box ml='auto' className={tinyGutterStyles.parent}>
+        <Box ml="auto" className={tinyGutterStyles.parent}>
           <IconButton classes={actionStyles}>
             <HelpOutline />
           </IconButton>
@@ -96,11 +94,13 @@ const AppHeader = () => {
           </IconButton>
         </Box>
         <Box ml={1} mr={-1.5}>
-          <IconButton className={googleStyles.root} classes={avatarStyles}>
-            <Avatar
-              alt=""
-              src="https://lh3.googleusercontent.com/ogw/ADGmqu8IRt2zAKQDEDvqL5Egm51VKCxJm2eb-N8YELr3=s64-c-mo"
-            />
+          <IconButton classes={avatarStyles}>
+            <div className={googleStyles.root}>
+              <Avatar
+                alt=""
+                src="https://lh3.googleusercontent.com/ogw/ADGmqu8IRt2zAKQDEDvqL5Egm51VKCxJm2eb-N8YELr3=s64-c-mo"
+              />
+            </div>
           </IconButton>
         </Box>
       </Toolbar>
