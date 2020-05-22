@@ -9,6 +9,7 @@ import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
 import AppHeader from "./components/AppHeader";
 import AppSidebar from "./components/AppSidebar";
 import AppFooter from "./components/AppFooter";
+import AppContent from './components/AppContent';
 import AppSubSidebar from './components/AppSubSidebar';
 import CustomTrigger from "./components/CustomTrigger";
 
@@ -64,7 +65,9 @@ function App() {
         <DrawerSidebar sidebarId={"primarySidebar"}>
           <AppSidebar />
         </DrawerSidebar>
-        <Content>content</Content>
+        <Content>
+          <AppContent />
+        </Content>
         <DrawerSidebar sidebarId={"secondarySidebar"}>
           <AppSubSidebar />
         </DrawerSidebar>
