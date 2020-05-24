@@ -1,13 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, IconButton } from "@material-ui/core";
+import {
+  Box,
+  IconButton,
+  MenuItem,
+  Checkbox,
+  ListItemIcon,
+  makeStyles,
+} from "@material-ui/core";
 import MoreVert from "@material-ui/icons/MoreVert";
 import Refresh from "@material-ui/icons/Refresh";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import Settings from "@material-ui/icons/Settings";
+import Keyboard from "@material-ui/icons/Keyboard";
+import Edit from "@material-ui/icons/Edit";
 import { useSizedIconButtonStyles } from "@mui-treasury/styles/iconButton/sized";
-import { useRowGutterStyles } from '@mui-treasury/styles/gutter/row';
+import { useRowGutterStyles } from "@mui-treasury/styles/gutter/row";
+import ArrowMenu from "@mui-treasury/components/menu/arrow";
 
 const Div = styled("div")`
   height: 48px;
@@ -17,21 +27,52 @@ const Div = styled("div")`
   align-items: center;
 `;
 
+const useStyles = makeStyles(() => ({
+  root: {
+    fontSize: 14,
+    paddingLeft: 32,
+    width: 160,
+  },
+}));
+
+const useCheckboxStyles = makeStyles(({ palette }) => ({
+  checked: {
+    color: palette.text.primary,
+  },
+}));
+
 const AppContent = () => {
   const actionStyles = useSizedIconButtonStyles({ padding: 8, childSize: 20 });
-  const gutterStyles = useRowGutterStyles({ size: "0.25rem" })
+  const gutterStyles = useRowGutterStyles({ size: "0.25rem" });
+  const menuItemClasses = useStyles();
+  const checkboxClasses = useCheckboxStyles();
   return (
     <Div>
-      <span className={gutterStyles.parent}>
+      <Box display="inline-flex" className={gutterStyles.parent}>
+        <ArrowMenu
+          renderElement={({ styles, onClose }) => (
+            <Checkbox
+              classes={checkboxClasses}
+              className={styles.button}
+              color={"default"}
+              onChange={onClose}
+            />
+          )}
+        >
+          <MenuItem classes={menuItemClasses}>All</MenuItem>
+          <MenuItem classes={menuItemClasses}>None</MenuItem>
+          <MenuItem classes={menuItemClasses}>Read</MenuItem>
+          <MenuItem classes={menuItemClasses}>Unread</MenuItem>
+        </ArrowMenu>
         <IconButton classes={actionStyles}>
           <Refresh />
         </IconButton>
         <IconButton classes={actionStyles}>
           <MoreVert />
         </IconButton>
-      </span>
-      <Box component="span" ml="auto" className={gutterStyles.parent}>
-        <Box fontSize={12} component="span" color="text.secondary">
+      </Box>
+      <Box display='inline-flex' alignItems="center" ml="auto" className={gutterStyles.parent}>
+        <Box fontSize={12} color="text.secondary">
           1-50 of 1,971
         </Box>
         <IconButton disabled classes={actionStyles}>
@@ -40,6 +81,24 @@ const AppContent = () => {
         <IconButton classes={actionStyles}>
           <KeyboardArrowRight />
         </IconButton>
+        <ArrowMenu
+          renderElement={({ styles, onClose }) => (
+            <IconButton
+              className={styles.button}
+              color={"default"}
+              onChange={onClose}
+            >
+              <Keyboard />
+            </IconButton>
+          )}
+        >
+          <MenuItem classes={menuItemClasses}>
+            <ListItemIcon style={{ minWidth: 32 }}>
+              <Edit fontSize={"small"} />
+            </ListItemIcon>
+            English
+          </MenuItem>
+        </ArrowMenu>
         <IconButton classes={actionStyles}>
           <Settings />
         </IconButton>
