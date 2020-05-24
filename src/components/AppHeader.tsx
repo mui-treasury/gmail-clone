@@ -75,7 +75,7 @@ const AppHeader = () => {
           className={styles.searchInput}
           placeholder="Search mail"
           startAdornment={
-            <IconButton className={gutterStyles.child} classes={actionStyles}>
+            <IconButton className={gutterStyles.adjacent} classes={actionStyles}>
               <Search />
             </IconButton>
           }
