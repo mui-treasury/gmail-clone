@@ -1334,12 +1334,12 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@mui-treasury/components@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@mui-treasury/components/-/components-1.2.2.tgz#778d5777a953e0a5db41bf59102d80bbe759c7ae"
-  integrity sha512-+T4BvEr956xlh9vAjoMpbbBVs0kmz8GJQpdvrKxrUuSfB1JK7W2z7VLjBTf8iTADjgnR5ttGSisRkwtUhGrP+w==
+"@mui-treasury/components@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@mui-treasury/components/-/components-1.3.4.tgz#838a06ceb55eb005ecff5184ee20e95b514b770a"
+  integrity sha512-IAoy2iwCQmv/o9spxAN2GIXhslkp8FWDLzXo+HadgK7RJ+yG+LeIsl+elKRnHiQBQrxehO17lTTkxdK8dC20pQ==
   dependencies:
-    "@mui-treasury/styles" "^1.4.0"
+    "@mui-treasury/styles" "^1.6.1"
     "@mui-treasury/utils" "^0.4.0"
     clsx "^1.0.4"
     use-deep-compare-effect "^1.3.0"
@@ -1352,10 +1352,10 @@
     debounce "^1.2.0"
     deepmerge "^4.2.2"
 
-"@mui-treasury/styles@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@mui-treasury/styles/-/styles-1.4.0.tgz#6587552ba5fd84f0965529c65151d26f4b839605"
-  integrity sha512-DLiX9t+F8o3cAkb2btkYk8JVVEglJYpsuqoz6Ex+aaKsE3T13Atm2ej5PHZpb1rtKvlXYqzcBrWDHuoJF38FlQ==
+"@mui-treasury/styles@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@mui-treasury/styles/-/styles-1.6.1.tgz#ab34576735c4226bd94c37b17a65336d0341d41b"
+  integrity sha512-KcqDWJMwL+pJdlNBb+yk+Rrpwm3+n9ijMX6f3oY6WSs77icNS3r5QthAJxrwHDB71zf+VkTOmoDeeL+KRXeUOA==
   dependencies:
     "@mui-treasury/utils" "^0.4.0"
     color "^3.1.2"
