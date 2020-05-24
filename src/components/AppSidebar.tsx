@@ -83,7 +83,7 @@ const AppSidebar = () => {
             />
             <Menu
               renderToggle={({
-                collapsed,
+                collapsed: menuCollapsed,
                 onClick,
               }: {
                 collapsed: boolean;
@@ -91,9 +91,9 @@ const AppSidebar = () => {
               }) => (
                 <GmailSidebarItem
                   startIcon={
-                    collapsed ? <KeyboardArrowUp /> : <KeyboardArrowDown />
+                    menuCollapsed ? <KeyboardArrowUp /> : <KeyboardArrowDown />
                   }
-                  label={collapsed ? "Less" : "More"}
+                  label={collapsed ? "" : (menuCollapsed ? "Less" : "More")}
                   onClick={onClick}
                 />
               )}
