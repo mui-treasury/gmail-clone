@@ -15,15 +15,15 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import Settings from "@material-ui/icons/Settings";
 import Keyboard from "@material-ui/icons/Keyboard";
 import Edit from "@material-ui/icons/Edit";
-import Inbox from '@material-ui/icons/Inbox';
-import LocalOffer from '@material-ui/icons/LocalOffer';
-import People from '@material-ui/icons/People';
-import Info from '@material-ui/icons/Info';
+import Inbox from "@material-ui/icons/Inbox";
+import LocalOffer from "@material-ui/icons/LocalOffer";
+import People from "@material-ui/icons/People";
+import Info from "@material-ui/icons/Info";
 import { useSizedIconButtonStyles } from "@mui-treasury/styles/iconButton/sized";
 import { useRowGutterStyles } from "@mui-treasury/styles/gutter/row";
 import ArrowMenu from "@mui-treasury/components/menu/arrow";
 import { GmailTabs, GmailTabItem } from "@mui-treasury/components/tabs/gmail";
-import MailListItem from './MailListItem'
+import MailListItem from "./MailListItem";
 
 const Div = styled("div")`
   height: 48px;
@@ -132,9 +132,32 @@ const AppContent = () => {
         />
         <GmailTabItem icon={<Info />} label={"Updates"} tag={"15 new"} />
       </GmailTabs>
-      <MailListItem />
+      {getMailList().map((mail, i) => (
+        <MailListItem key={i} {...mail} />
+      ))}
     </>
   );
 };
+
+const getMailList = () => [
+  {
+    starred: true,
+    labeled: true,
+    title: (
+      <>
+        <b>Grab</b>
+        <span>3</span>
+      </>
+    ),
+    description: (
+      <>
+        <b>Your Grab E-Receipt</b> - ทานอาหารให้อร่อย! รวม THB 220 วันที่ | เวลา
+        21 May 20 08:39 +0700 รายละเอียดการเดินทาง GrabFood ชื่อผู้ขับ (GFH)xxx
+        ชื่อผู้เดินทาง xxx รหัสการจอง IOS-91396443-9-056 สถานที่
+      </>
+    ),
+    date: <b>May 21</b>,
+  },
+];
 
 export default AppContent;

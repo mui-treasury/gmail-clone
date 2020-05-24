@@ -9,8 +9,8 @@ import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
 import AppHeader from "./components/AppHeader";
 import AppSidebar from "./components/AppSidebar";
 import AppFooter from "./components/AppFooter";
-import AppContent from './components/AppContent';
-import AppSubSidebar from './components/AppSubSidebar';
+import AppContent from "./components/AppContent";
+import AppSubSidebar from "./components/AppSubSidebar";
 import CustomTrigger from "./components/CustomTrigger";
 
 const scheme = Layout();
@@ -58,7 +58,12 @@ function App() {
       <Root
         theme={theme}
         scheme={scheme}
-        initialState={{ sidebar: { secondarySidebar: { open: true } } }}
+        initialState={{
+          sidebar: {
+            primarySidebar: { collapsed: true },
+            secondarySidebar: { open: true },
+          },
+        }}
       >
         <CssBaseline />
         <AppHeader />
